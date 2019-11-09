@@ -67,8 +67,8 @@ def _draw_single_box(image, xmin, ymin, xmax, ymax, display_str, color='black', 
 
 
 def hparams(hparam_dict=None, metric_dict=None):
-    from tensorboardX.proto.plugin_hparams_pb2 import HParamsPluginData, SessionEndInfo, SessionStartInfo
-    from tensorboardX.proto.api_pb2 import Experiment, HParamInfo, MetricInfo, MetricName, Status
+    from nnabla_tensorboard.proto.plugin_hparams_pb2 import HParamsPluginData, SessionEndInfo, SessionStartInfo
+    from nnabla_tensorboard.proto.api_pb2 import Experiment, HParamInfo, MetricInfo, MetricName, Status
     from six import string_types
 
     PLUGIN_NAME = 'hparams'

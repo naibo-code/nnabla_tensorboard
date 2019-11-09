@@ -182,7 +182,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
 
             # create a summary writer with automatically generated folder name.
             writer = SummaryWriter()
@@ -298,7 +298,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             with SummaryWriter() as w:
                 for i in range(5):
                     w.add_hparams({'lr': 0.1*i, 'bsize': i},
@@ -331,7 +331,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             writer = SummaryWriter()
             x = range(100)
             for i in x:
@@ -362,7 +362,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             writer = SummaryWriter()
             r = 5
             for i in range(100):
@@ -411,7 +411,7 @@ class SummaryWriter(object):
 
         Args:
             tag (string): Data identifier
-            values (torch.Tensor, numpy.array, or string/blobname): Values to build histogram
+            values (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): Values to build histogram
             global_step (int): Global step value to record
             bins (string): One of {'tensorflow','auto', 'fd', ...}. This determines how the bins are made. You can find
               other options in: https://docs.scipy.org/doc/numpy/reference/generated/numpy.histogram.html
@@ -419,7 +419,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             import numpy as np
             writer = SummaryWriter()
             for i in range(10):
@@ -517,7 +517,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             import numpy as np
             img = np.zeros((3, 100, 100))
             img[0] = np.arange(0, 10000).reshape(100, 100) / 10000
@@ -564,7 +564,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             import numpy as np
 
             img_batch = np.zeros((16, 3, 100, 100))
@@ -682,7 +682,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             import numpy as np
             labels = np.random.randint(2, size=100)  # binary label
             predictions = np.random.rand(100)
@@ -812,7 +812,7 @@ class SummaryWriter(object):
 
         Examples::
 
-            from tensorboardX import SummaryWriter
+            from nnabla_tensorboard import SummaryWriter
             vertices_tensor = np.array([[
                 [1, 1, 1],
                 [-1, -1, 1],

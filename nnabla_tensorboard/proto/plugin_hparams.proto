@@ -31,7 +31,7 @@ syntax = "proto3";
 import "nnabla_tensorboard/proto/api.proto";
 import "google/protobuf/struct.proto";
 
-package tensorboardX.hparam;
+package tensorboard.hparam;
 
 // HParam summaries created by `tensorboard.plugins.hparams.summary`
 // module will include `SummaryMetadata` whose `plugin_data` field has
