@@ -13,15 +13,19 @@ This project is based on [https://github.com/lanpa/tensorboardX](https://github.
 
 ## Install
 
-Tested on Python 3.7.4 / nnabla 1.3.0 / tensorboard 2.0.1
+### Requirements
 
-Build from source:
+* Python >= 3.6
+* nnabla >= v1.0.11
+* tensorboard >= 1.13.0
+
+### Build from source
 
 `pip install 'git+https://github.com/naibo-code/nnabla_tensorboard.git'`
 
+Tested on Python 3.7.4 / nnabla 1.3.0 / tensorboard 2.0.1
 
 You can optionally install [`crc32c`](https://github.com/ICRAR/crc32c) to speed up saving a large amount of data.
-
 
 ## Example
 
