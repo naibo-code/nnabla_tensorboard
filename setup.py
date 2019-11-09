@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 version_git = '0.1'
 
@@ -28,7 +28,7 @@ setup(
     author='naibo-code',
     author_email='naibo.ha@gmail.com',
     url='https://github.com/naibo-code/nnabla_tensorboard',
-    packages=['nnabla_tensorboard'],
+    packages=find_packages(exclude=['tests']),
     include_package_data=True,
     install_requires=requirements,
     license='MIT license',
