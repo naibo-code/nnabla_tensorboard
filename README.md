@@ -1,8 +1,11 @@
-`nnabla_tensorboard` is a tool to help users who use NNabla (Neural Network Libraries [https://nnabla.org/](https://nnabla.org/)) to use TensorBoard as visualization tool.
+[![Build Status](https://travis-ci.org/naibo-code/nnabla_tensorboard.svg?branch=master)](https://travis-ci.org/naibo-code/nnabla_tensorboard)
+
 
 # nnabla_tensorboard
 
-Writes TensorBoard events with simple function call.
+`nnabla_tensorboard` is a tool to help users who use NNabla (Neural Network Libraries [https://nnabla.org/](https://nnabla.org/)) to use TensorBoard as visualization tool.
+
+Uses can write TensorBoard events with simple function call.
 
 * Support `scalar`, `image`, `figure`, `histogram` and `text` summaries.
 
