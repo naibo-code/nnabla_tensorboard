@@ -10,8 +10,8 @@ from nnabla_tensorboard import SummaryWriter
 def demo_histogram(writer):
     """ Show how to use add_histogram() to add histogram to tensorboard for NNabla.
 
-    :param writer:
-    :return:
+    :param writer: nnabla_tensorboard summary writer.
+    :return: nothing.
     """
     nn.clear_parameters()
 
@@ -25,12 +25,12 @@ def demo_histogram(writer):
             writer.add_histogram(name, value)
 
 
-def demo_scaler(writer, n_iter):
+def demo_scalar(writer, n_iter):
     """ Show how to add_scalar() and add_scalars() to add scalar(s) to tensorboard for NNabla.
 
-    :param writer:
-    :param n_iter:
-    :return:
+    :param writer: nnabla_tensorboard summary writer.
+    :param n_iter: global_step for tensorboard.
+    :return: nothing.
     """
     dummy_s1 = nn.Variable.from_numpy_array(np.random.rand(1))
     dummy_s2 = nn.Variable.from_numpy_array(np.random.rand(1))
@@ -47,10 +47,10 @@ def demo_scaler(writer, n_iter):
 def demo_image(writer, x, n_iter):
     """ Show how to add_image() to add image to tensorboard for NNabla.
 
-    :param writer:
+    :param writer: nnabla_tensorboard summary writer.
     :param x: NNabla variable tensor with the format [B, C, H, W].
-    :param n_iter:
-    :return:
+    :param n_iter: global_step for tensorboard.
+    :return: nothing.
     """
     tiled = tile_images(x.d)  # return numpy.ndarray
     writer.add_image('Image', tiled, n_iter, dataformats='HWC')
@@ -59,9 +59,9 @@ def demo_image(writer, x, n_iter):
 def demo_pr_curve(writer, n_iter):
     """ Show how to add_pr_curve() and add_pr_curve_raw() to add precision recall curve to tensorboard for NNabla.
 
-    :param writer:
-    :param n_iter:
-    :return:
+    :param writer: nnabla_tensorboard summary writer.
+    :param n_iter: global_step for tensorboard.
+    :return: nothing.
     """
     # Adds precision recall curve.
     writer.add_pr_curve('xoxo', np.random.randint(2, size=100), np.random.rand(
@@ -86,9 +86,9 @@ def demo_pr_curve(writer, n_iter):
 def demo_text(writer, n_iter):
     """ Show how to add_text() to add text to tensorboard for NNabla.
 
-    :param writer:
-    :param n_iter:
-    :return:
+    :param writer: nnabla_tensorboard summary writer. nnabla_tensorboard summary writer.
+    :param n_iter: global_step for tensorboard.
+    :return: nothing.
     """
     writer.add_text('Text', 'text logged at step:' + str(n_iter), n_iter)
     writer.add_text('markdown Text', '''a|b\n-|-\nc|d''', n_iter)
@@ -100,7 +100,7 @@ def demo():
     demo_histogram(writer)
 
     for n_iter in range(100):
-        demo_scaler(writer, n_iter)
+        demo_scalar(writer, n_iter)
 
         x = nn.Variable.from_numpy_array(np.random.random([32, 3, 64, 64]))  # output from network (dummy image)
 
