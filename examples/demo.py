@@ -7,10 +7,11 @@ from nnabla.monitor import tile_images
 from nnabla_tensorboard import SummaryWriter
 
 
-def demo_histogram(writer):
+def demo_histogram(writer, n_iter):
     """ Show how to use add_histogram() to add histogram to tensorboard for NNabla.
 
     :param writer: nnabla_tensorboard summary writer.
+    :param n_iter: global_step for tensorboard.
     :return: nothing.
     """
     nn.clear_parameters()
@@ -22,7 +23,7 @@ def demo_histogram(writer):
     for name, value in nn.get_parameters().items():
         if 'bn' not in name:
             # Add the histogram of parameter to tensorboard for NNabla.
-            writer.add_histogram(name, value)
+            writer.add_histogram(name, value, n_iter)
 
 
 def demo_scalar(writer, n_iter):
@@ -97,7 +98,6 @@ def demo_text(writer, n_iter):
 def demo():
     writer = SummaryWriter()
     nn.set_auto_forward(True)
-    demo_histogram(writer)
 
     for n_iter in range(100):
         demo_scalar(writer, n_iter)
@@ -105,6 +105,7 @@ def demo():
         x = nn.Variable.from_numpy_array(np.random.random([32, 3, 64, 64]))  # output from network (dummy image)
 
         if n_iter % 10 == 0:
+            demo_histogram(writer, n_iter)
             demo_image(writer, x, n_iter)
             demo_text(writer, n_iter)
 
