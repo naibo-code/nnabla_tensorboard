@@ -452,10 +452,10 @@ class SummaryWriter(object):
             num (int): Number of values
             sum (float or int): Sum of all values
             sum_squares (float or int): Sum of squares for all values
-            bucket_limits (torch.Tensor, numpy.array): Upper value per
+            bucket_limits (torch.Tensor, nnabla._variable.Variable, numpy.array): Upper value per
               bucket, note that the bucket_limits returned from `np.histogram`
               has one more element. See the comment in the following example.
-            bucket_counts (torch.Tensor, numpy.array): Number of values per bucket
+            bucket_counts (torch.Tensor, nnabla._variable.Variable, numpy.array): Number of values per bucket
             global_step (int): Global step value to record
             walltime (float): Optional override default walltime (time.time()) of event
 
@@ -502,7 +502,7 @@ class SummaryWriter(object):
 
         Args:
             tag (string): Data identifier
-            img_tensor (torch.Tensor, numpy.array, or string/blobname): An `uint8` or `float`
+            img_tensor (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): An `uint8` or `float`
                 Tensor of shape `[channel, height, width]` where `channel` is 1, 3, or 4.
                 The elements in img_tensor can either have values in [0, 1] (float32) or [0, 255] (uint8).
                 Users are responsible to scale the data in the correct range/type.
@@ -553,7 +553,7 @@ class SummaryWriter(object):
 
         Args:
             tag (string): Data identifier
-            img_tensor (torch.Tensor, numpy.array, or string/blobname): Image data
+            img_tensor (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): Image data
                 The elements in img_tensor can either have values in [0, 1] (float32) or [0, 255] (uint8).
                 Users are responsible to scale the data in the correct range/type.
             global_step (int): Global step value to record
@@ -671,9 +671,9 @@ class SummaryWriter(object):
 
         Args:
             tag (string): Data identifier
-            labels (torch.Tensor, numpy.array, or string/blobname):
+            labels (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname):
               Ground truth data. Binary label for each element.
-            predictions (torch.Tensor, numpy.array, or string/blobname):
+            predictions (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname):
               The probability that an element be classified as true.
               Value should in [0, 1]
             global_step (int): Global step value to record
@@ -711,12 +711,12 @@ class SummaryWriter(object):
 
         Args:
             tag (string): Data identifier
-            true_positive_counts (torch.Tensor, numpy.array, or string/blobname): true positive counts
-            false_positive_counts (torch.Tensor, numpy.array, or string/blobname): false positive counts
-            true_negative_counts (torch.Tensor, numpy.array, or string/blobname): true negative counts
-            false_negative_counts (torch.Tensor, numpy.array, or string/blobname): false negative counts
-            precision (torch.Tensor, numpy.array, or string/blobname): precision
-            recall (torch.Tensor, numpy.array, or string/blobname): recall
+            true_positive_counts (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): true positive counts
+            false_positive_counts (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): false positive counts
+            true_negative_counts (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): true negative counts
+            false_negative_counts (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): false negative counts
+            precision (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): precision
+            recall (torch.Tensor, nnabla._variable.Variable, numpy.array, or string/blobname): recall
             global_step (int): Global step value to record
             num_thresholds (int): Number of thresholds used to draw the curve.
             walltime (float): Optional override default walltime (time.time()) of event
